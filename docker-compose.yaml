@@ -1,0 +1,13 @@
+version: '3.2'
+services:
+  blob-proxy:
+    image: ani1797/blob-proxy:1.1
+    privileged: true
+    build:
+      context: .
+    ports:
+    - "1234:22"
+    environment:
+      AZURE_STORAGE_ACCOUNT: account_name
+      AZURE_STORAGE_ACCESS_KEY: "access_key"
+      AZURE_STORAGE_CONTAINER_NAME: container_name
